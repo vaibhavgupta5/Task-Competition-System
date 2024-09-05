@@ -32,7 +32,32 @@ export async function POST(req: NextRequest){
             )
         }
     
+        let total = 0;
 
+        if(buddyPartnerCall === "Yes"){
+            total += 10;
+        }
+
+        if(level00AdsRunning === "Yes"){
+            total += 10;
+        }
+
+        if(level1AdsRunning === "Yes"){
+            total += 10;
+        }
+
+        if(level2AdsRunning === "Yes"){
+            total += 10;
+        }
+
+        if(contentMultiplierSystemExecuted === "Yes"){
+            total += 10;
+        }
+
+        const allTotal = total + Number(socialMediaPosts) + Number(outreachDone) + Number(proposalsShared)
+
+
+        console.log(allTotal)
 
         user.weekly.push({
             
@@ -45,7 +70,7 @@ export async function POST(req: NextRequest){
             level1AdsRunning: level1AdsRunning,
             level2AdsRunning: level2AdsRunning,
             contentMultiplierSystemExecuted : contentMultiplierSystemExecuted,
-
+            total : allTotal.toString()
      } as weekly)
     
         user.save()

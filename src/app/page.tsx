@@ -1,5 +1,6 @@
 'use client'
 import Header from "@/Components/header";
+import Scoreboard from "@/Components/scoreboard";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
             </div>
         </div>
         <div className="bg-white rounded-md h-[70vh] w-full m-2">
-          
+          <Scoreboard/>
         </div>
         </div>
       </div>

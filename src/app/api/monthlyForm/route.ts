@@ -22,11 +22,26 @@ export async function POST(req: NextRequest){
             )
         }
     
+        const currentDate = new Date(); // Current date
+
+        // Convert START_DATE to a Date object
+        const startDate = new Date(process.env.START_DATE as string);
         
+        // Calculate the difference in milliseconds
+        const timeDiff = Math.abs(Number(currentDate)- Number(startDate));
+        
+        // Convert the difference from milliseconds to days
+        const diffDays = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+        
+        // Assuming a 30-day total, calculate remaining days
+        const total = 30 - diffDays;  
+        console.log(diffDays)
+        console.log(total)
 
         user.monthly.push({
             assignmentType: assignmentType,
-  uploadDocument: uploadDocument
+  uploadDocument: uploadDocument,
+  total: total.toString()
      } as monthly)
     
 

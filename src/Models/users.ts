@@ -3,12 +3,14 @@ import mongoose, { Schema, Document } from "mongoose";
 export interface daily extends Document {
   mmds: string;
   ders: string;
+  total: string;
   createdAt: Date;
 }
 
 const dailySchema: Schema<daily> = new Schema({
   mmds: { type: String, required: true },
   ders: { type: String, required: true },
+  total: { type: String, required: true },
   createdAt: { type: Date, default: Date.now },
 });
 
@@ -18,9 +20,10 @@ export interface weekly extends Document {
   outreachDone: number;
   proposalsShared: number;
   level00AdsRunning: string;
-  level1AdsRunning: String;
-  level2AdsRunning: String;
-  contentMultiplierSystemExecuted: String;
+  level1AdsRunning: string;
+  level2AdsRunning: string;
+  total: string;
+  contentMultiplierSystemExecuted: string;
   createdAt: Date;
 }
 
@@ -33,12 +36,14 @@ const weeklySchema: Schema<weekly> = new Schema({
   level1AdsRunning: { type: String, required: true },
   level2AdsRunning: { type: String, required: true },
   contentMultiplierSystemExecuted: { type: String, required: true },
+  total: { type: String, required: true},
   createdAt: { type: Date, default: Date.now },
 });
 
 export interface monthly extends Document {
   assignmentType: string;
   uploadDocument: string;
+  total: string;
   createdAt: Date;
 }
 
@@ -46,6 +51,7 @@ const monthlySchema: Schema<monthly> = new Schema({
   assignmentType: { type: String, required: true },
   uploadDocument: { type: String, required: true },
   createdAt: { type: Date, default: Date.now },
+  total: { type: String, required: true }
 });
 
 export interface awards extends Document {

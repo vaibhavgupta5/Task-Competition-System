@@ -45,11 +45,24 @@ export async function POST(req: NextRequest){
             }
             
         }
+
+        let total = 0
+
+        if(mmds === "Yes" && ders === "Yes"){
+                total = 2;
+        }
+        else if((mmds === "Yes" && ders === "No") || (mmds === "No" && ders === "Yes")){
+                total = 1;
+        }
+        else{
+            total = 0;
+        }
      
 
         user.daily.push({
             mmds : mmds,
             ders : ders,
+            total : total.toString(),
      } as daily)
     
         user.save()
