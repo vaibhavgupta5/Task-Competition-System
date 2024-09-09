@@ -18,7 +18,21 @@ export default function Home() {
           <h1 className="font-medium text-xl pb-4">Scoreboard</h1>
           <Scoreboard/>
         </div>
+
+       
         </div>
+
+        <div className="bg-white p-4 rounded-md h-[87vh]  w-[40%] m-2">
+          <h1 className="font-medium text-xl pb-4">Scoreboard</h1>
+          <Scoreboard/>
+        </div>
+
+        <div className="bg-white p-4 rounded-md h-[87vh]  w-[50%] ">
+          <h1 className="font-medium text-xl pb-4">Scoreboard</h1>
+          <Scoreboard/>
+        </div>
+
+
       </div>
     </div>
   )
