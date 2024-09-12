@@ -45,7 +45,7 @@ export function RadialCharts({dailyData}: any, {chartName}:any)
     <Card className="flex flex-col m-1">
       <CardHeader className="items-center pb-2">
         <CardTitle>{chartName}</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
+        <CardDescription>January</CardDescription>
       </CardHeader>
       <CardContent className="flex-1 pb-0">
         <ChartContainer
@@ -58,8 +58,8 @@ export function RadialCharts({dailyData}: any, {chartName}:any)
             data={chartData}
             startAngle={0}
             endAngle={250}
-            innerRadius={50}
-            outerRadius={70}
+            innerRadius={40}
+            outerRadius={50}
           >
             <PolarGrid
               gridType="circle"
@@ -104,8 +104,8 @@ export function RadialCharts({dailyData}: any, {chartName}:any)
         </ChartContainer>
       </CardContent>
       <CardFooter className="flex-col gap-2 text-sm">
-        <div className="flex items-center gap-2 font-medium leading-none pt-4 justify-center">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+        <div className="flex items-center gap-2 font-medium leading-none pt-4 justify-center ">
+          Trending up by 5.2%<TrendingUp className="h-4 w-4" />
         </div>
       </CardFooter>
     </Card>

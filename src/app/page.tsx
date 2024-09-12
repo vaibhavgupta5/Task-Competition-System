@@ -89,6 +89,8 @@ export default function Home() {
          <div className="flex">
          <RadialCharts  chartName={chartName} dailyData={dailyData?.toString()}/>
          <RadialCharts chartName={chartName} dailyData={weeklyData?.toString()}/>
+         <RadialCharts chartName={chartName} dailyData={weeklyData?.toString()}/>
+
          </div>
         </div>
 
